@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace UsbCharger
 {
-    class Cabeza
+    class Cabeza : PowerDelivery
     {
         string Region;
         public Cabeza(string region)
@@ -17,19 +17,13 @@ namespace UsbCharger
         {
             return Region;
         }
-        public void connectCabeza(Enchufe enchufe)
+        public void printConnect()
         {
-            string regionEnchufe = enchufe.getRegion();
-            //Console.WriteLine("string compare result = " + string.Compare(getRegion(), regionEnchufe, true));
 
             Console.WriteLine("Se conecta la cabeza de region " + getRegion());
 
-            if (string.Compare(getRegion(), regionEnchufe, true) != 0)
-            {
-                Adaptador adaptador = new Adaptador(regionEnchufe, getRegion());
-                adaptador.connectAdaptador();
-                //adaptador
-            }
+            
         }
+
     }
 }

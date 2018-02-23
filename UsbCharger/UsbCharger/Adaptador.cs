@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace UsbCharger
 {
-    class Adaptador
+    class Adaptador : PowerDelivery
     {
         string regionDesde;
         string regionHasta;
@@ -15,10 +15,16 @@ namespace UsbCharger
             regionDesde = RegionDs;
             regionHasta = RegionAs;
         }
+        public string getRegion()
+        {
+            return null;
+        }
 
-        public void connectAdaptador()
+        public void printConnect()
         {
             Console.WriteLine("Con el adaptador de region " + regionDesde + " a la region " + regionHasta);
         }
+
+
     }
 }

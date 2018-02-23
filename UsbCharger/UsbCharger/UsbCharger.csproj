@@ -47,6 +47,7 @@
     <Compile Include="Cable.cs" />
     <Compile Include="Celular.cs" />
     <Compile Include="Enchufe.cs" />
+    <Compile Include="PowerDelivery.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

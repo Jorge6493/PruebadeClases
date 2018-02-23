@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace UsbCharger
 {
-    class Enchufe
+    class Enchufe : PowerDelivery
     {
         string Region;
         public Enchufe(string region)

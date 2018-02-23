@@ -8,6 +8,16 @@ namespace UsbCharger
 {
     class Program
     {
+        static void checkAdapter(Enchufe enchufe, Cabeza cabeza)
+        {
+            if (string.Compare(cabeza.getRegion(), enchufe.getRegion(), true) != 0)
+            {
+                Adaptador adaptador = new Adaptador(enchufe.getRegion(), cabeza.getRegion()); //check S
+                adaptador.printConnect();
+                //adaptador
+            }
+        }
+
         static void initCharge(string region1,string region2,string phone,string port)
         {
             Enchufe enchufe = new Enchufe(region1);
@@ -16,7 +26,8 @@ namespace UsbCharger
             Cable cable = new Cable(celular);
 
             enchufe.printConnect();
-            cabeza.connectCabeza(enchufe);
+            cabeza.printConnect();
+            checkAdapter(enchufe, cabeza);
             celular.connectCelular(cable);
 
         }
@@ -24,7 +35,7 @@ namespace UsbCharger
         static void Main(string[] args)
         {
             initCharge("USA", "Europa", "iPhone", "Lightning");
-            //connectCharge();
+           
 
             Console.ReadKey();
 
