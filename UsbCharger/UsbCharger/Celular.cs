@@ -23,9 +23,9 @@ namespace UsbCharger
         {
             return puerto;
         }
-        public void connectCelular(Cable cable)
+        public void connectCelular()
         {
-            Console.WriteLine("Al " + getNombre()+ " con el cable " + cable.getPuerto());// check S
+            Console.WriteLine("Al " + getNombre());// + " con el cable " + cable.getPuerto());// check S
             //Console.WriteLine();
         }
     }

@@ -23,12 +23,14 @@ namespace UsbCharger
             Enchufe enchufe = new Enchufe(region1);
             Cabeza cabeza = new Cabeza(region2);
             Celular celular = new Celular(phone, port);
-            Cable cable = new Cable(celular);
+            CableFactory cableF = new CableFactory();
 
             enchufe.printConnect();
             cabeza.printConnect();
             checkAdapter(enchufe, cabeza);
-            celular.connectCelular(cable);
+            celular.connectCelular();
+            ICable cable = cableF.GetCable(celular);
+            cable.printCable();
 
         }
 
